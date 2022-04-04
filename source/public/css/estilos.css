@@ -1,0 +1,64 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(197, 197, 197);
+}
+
+header{
+    width: 100%;
+	padding-left: 40%;
+    background-image: linear-gradient( 135deg, #4f8de969 10%, #23d3236b 100%);
+}
+
+th{
+    padding-left: 5%;
+}
+
+#borde{
+    margin-left: 37%;
+}
+
+#boton1{
+    margin-left: 45%;
+    margin-top: 1%;
+}
+
+#boton2{
+    margin-left: 50%;
+    margin-top: -3.2%;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: white;
+    margin-left: 10%;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: white;
+    align-content: center;
+}
+
+img{
+    width: 15%;
+    margin-left: 42%;
+}
+
+#datos{
+    padding-left: 40%;
+}
+
+#datos2{
+    padding-left: 47%;
+    margin-top: -8.7%;
+}
+
+#boton3{
+    margin-left: 47%;
+}
+
+td{
+    padding-left: 5%;
+}
