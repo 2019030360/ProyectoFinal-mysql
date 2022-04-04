@@ -6,34 +6,51 @@ body{
 header{
     width: 100%;
 	padding-left: 40%;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
     background-image: linear-gradient( 135deg, #4f8de969 10%, #23d3236b 100%);
-}
-
-th{
-    padding-left: 5%;
-}
-
-#borde{
-    margin-left: 37%;
 }
 
 #boton1{
     margin-left: 45%;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 #boton2{
     margin-left: 50%;
-    margin-top: -3.2%;
+    margin-top: -4.3%;
+}
+
+#boton3{
+    margin-left: 47%;
+    margin-top: 1%;
+}
+
+#boton4{
+    margin-left: 37%;
+    margin-top: 1%;
+}
+
+#tablaM{
+    width: 60%;
+    margin-left: 22%;
+}
+
+th,td{
+    padding-left: 5%;
+}
+
+#td{
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 table {
     table-layout: fixed;
-    width: 80%;
+    width: 70%;
     border-collapse: collapse;
     border-style: solid;
     border-color: white;
-    margin-left: 10%;
 }
 
 tbody tr:nth-child(odd) {
@@ -41,24 +58,33 @@ tbody tr:nth-child(odd) {
     align-content: center;
 }
 
-img{
-    width: 15%;
-    margin-left: 42%;
+#input{
+    width: 30%;
 }
 
-#datos{
-    padding-left: 40%;
+#margen{
+    margin-left: 32%;
 }
 
-#datos2{
-    padding-left: 47%;
-    margin-top: -8.7%;
+#margen2{
+    margin-left: 15%;
 }
 
-#boton3{
+
+#label{
+    width: 5%;
     margin-left: 47%;
 }
 
-td{
-    padding-left: 5%;
+#label2{
+    margin-left: 46%;
+}
+
+img{
+    width: 20%;
+    margin-left: 40%;
+}
+
+footer{
+    margin-top: 2%;
 }

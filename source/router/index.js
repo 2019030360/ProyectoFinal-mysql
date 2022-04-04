@@ -1,7 +1,7 @@
 const express = require("express");
 const dbContactos = require('../models/contactos.js');
 const router = express.Router();
-const mysql = require("mysql2");
+const mysql = require("mysql");
 
 router.get('/', (req, res) => {
     res.send("Iniciamos Servidor");

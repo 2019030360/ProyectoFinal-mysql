@@ -6,24 +6,24 @@
 			<%-include('partials/navegacion.html');%>
 		</header>
 
+		<div>
 		<center>
-			<br>
-			<h3>Lista de Contactos</h3>
+			<h1>Listado de Contactos</h1>
 		</center>
-		<table>
+		<table id="tablaM">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Nombre</th>
-					<th>Domicilio</th>
-					<th>Telefono</th>
+					<th scope="col" id="td">ID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Domicilio</th>
+					<th scope="col">Telefono</th>
 				</tr>
 			</thead>
 			<% if (contactos) { %>
 				<tbody>
 					<% for(var i=0; i < contactos.length; i++ ) { %>
 						<tr>
-							<td>
+							<td id="td">
 								<%= contactos[i].idContactos %>
 							</td>
 							<td>
@@ -41,67 +41,90 @@
 				<% } %>
 
 		</table>
-		<form action="/contactos" method="post">
-			<button type="submit" id="boton1">Ver</button>
-		</form>
-		<form action="/contactos" method="get">
-			<button action="/contactos" id="boton2">Limpiar</button>
-		</form>
+
+		<div id="botones">
+			<form action="/contactos" method="post">
+				<button type="submit" class="btn btn-secondary mb-2" id="boton1">Ver</button>
+			</form>
+			<form action="/contactos" method="get">
+				<button action="/contactos" class="btn btn-secondary mb-2" id="boton2">Limpiar</button>
+			</form>
+		</div>
+
+		<div class="agregarcontacto">
+			<center>
+				<h3>Agregar un nuevo contacto</h3> 
+			</center>
+			<form action="/contactos/nuevo" method="post">
+			<div class="form-group row" id="cont-agregar">
+				<div id="margen">
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-1 col-form-label">Nombre</label>
+					<div class="col-sm-10" id="input">
+						<input type="text" name="nombre" id="nombre" class="form-control">
+					</div>
+					</div>
+		
+					<div class="form-group row">
+						<label for="direccion" class="col-sm-1 col-form-label">Domicilio</label>
+					<div class="col-sm-10" id="input">
+						<input type="text" name="domicilio" id="domicilio" class="form-control">
+					</div>
+					</div>
+					<div class="form-group row">
+						<label for="telefono" class="col-sm-1 col-form-label">Telefono</label>
+						<div class="col-sm-10" id="input">
+							<input type="text" name="telefono" id="telefono" class="form-control">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div id="boton3">
+				<button type="submit" class="btn btn-secondary mb-2" id="Agregar">Agregar</button>
+			</div>
+		</form> 
+		</div>
+
 		<center>
 			<h3>Modificar Contacto</h3>
 		</center>
-		<div id="borde">
-			<form action="/contactos/id" method="get">
-				<label for="idContactos">Contacto ID:</label>
-				<input type="text" id="idContactos" name="idContactos">
-				<button type="submit">Buscar</button>
-			</form>	
+		<form action="/contactos/id" method="get" id="ides">
+			<label for="idContactos" id="label2">Contacto ID:</label>
+			<div id="label">
+				<input type="text" id="idContactos"  class="form-control" name="idContactos">	
+			</div>
+			<div id="boton3">
+				<button type="submit" class="btn btn-secondary mb-2" id="busc">Buscar</button>
+			</div>
+		</form>
 		</div>
 		<% if ( contacto ) { %>
-			<div>
+			<div id="margen2">
 				<form action="/contactos/id" method="post">
 					<input type="hidden" name="idContactos" id="idContactos" value="<%=contacto.idContactos%>">
-					<label for="nombre">Nombre:</label>
+					<label for="nombre" class="col-sm-0 col-form-label">Nombre:</label>
 					<input type="text" id="nombre" name="nombre" value="<%=contacto.nombre%>">
-					<label for="domicilio">Domicilio:</label>
+					<label for="domicilio" class="col-sm-0 col-form-label">Domicilio:</label>
 					<input type="text" id="domicilio" name="domicilio" value="<%=contacto.domicilio%>">
-					<label for="telefono">Telefono:</label>
+					<label for="telefono" class="col-sm-0 col-form-label">Telefono:</label>
 					<input type="text" id="telefono" name="telefono" value="<%=contacto.telefono%>">
-					<button type="submit">Guardar</button>
+					<button type="submit" class="btn btn-secondary mb-2">Guardar</button>
 				</form>
 
 				<form action="/contactos/id/borrar" method="post">
 					<input type="hidden" name="idContactos" id="idContactos" value="<%=contacto.idContactos%>">
-					<button type="submit">Eliminar</button>
+					<button type="submit" class="btn btn-secondary mb-2" id="boton4">Eliminar</button>
 				</form>
 			</div>
 			<% } %>
 
-				<center>
-					<h3>Agregar Contacto</h3>
-				</center>
-				<form action="/contactos/nuevo" method="post">
-					<div>
-						<div id="datos">
-							<label for="nombre">Nombre</label><br><br>
-							<label for="domicilio">Domicilio</label><br><br>
-							<label for="telefono">Telefono</label>
-						</div>
-						<div id="datos2">
-							<input type="text" name="nombre" id="nombre"><br><br>
-							<input type="text" name="domicilio" id="domicilio"><br><br>
-							<input type="text" name="telefono" id="telefono">
-						</div>
-					</div>
-					<div>
-						<br>
-						<button type="submit" id="boton3">Guardar</button>
-					</div>
-				</form>
 
+				
 
 	</body>
 
 	<%-include('partials/footer.html');%>
+	</div>
 		
 </html>
